@@ -1,0 +1,98 @@
+@import '../../styles/helpers/index.scss';
+
+.satisfaction {
+  position: relative;
+  margin: 140px 0 0;
+
+  @media screen and (max-width: $tablet-sm) {
+    margin: 70px 0 0;
+  }
+
+  &::before {
+    content: '';
+
+    background-image: url('../../static/images/pseudo/satisfaction.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 425px;
+    height: 190px;
+
+    @media screen and (max-width: $tablet-sm) {
+      display: none;
+    }
+  }
+
+  .section-title {
+    &::before {
+      background-image: url('../../static/images/pseudo/section-title_satisfaction.svg');
+      left: -25px;
+      top: 58px;
+      height: 12px;
+      width: 160px;
+
+      @media screen and (max-width: $tablet-sm) {
+        top: 34px;
+        left: 0;
+      }
+    }
+  }
+
+  &__grid {
+    margin: 70px 0 0;
+    @include grid($columns: repeat(3, 1fr));
+
+    @media screen and (max-width: $tablet-sm) {
+      margin: 50px 0 0;
+    }
+
+    &--item {
+      @include scale;
+      padding: 40px 24px 45px;
+      border: 1px solid map-get($colors, 'grey');
+
+      @media screen and (max-width: $tablet-sm) {
+        padding: 25px 15px;
+      }
+
+      .stars {
+        font-size: 25px;
+        color: map-get($colors, 'red');
+        text-align: center;
+        i {
+          &:not(:last-of-type) {
+            margin: 0 12px 0 0;
+          }
+        }
+      }
+
+      hr {
+        margin: 35px 0;
+        border: 0;
+        border-top: 2px solid map-get($colors, 'grey');
+
+        @media screen and (max-width: $tablet-sm) {
+          margin: 25px 0;
+        }
+      }
+
+      .reviews {
+        @include align-center;
+        justify-content: center;
+
+        span {
+          margin: 0 0 0 30px;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 110%;
+          color: map-get($colors, 'text');
+        }
+      }
+    }
+  }
+}

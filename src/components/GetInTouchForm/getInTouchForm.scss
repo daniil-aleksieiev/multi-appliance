@@ -16,15 +16,17 @@
         background: #fff;
         border: none;
         color: map-get($colors, 'text');
+        font-weight: 300;
         font-size: 16px;
+        line-height: 155%;
         appearance: none;
         -webkit-appearance: none;
         &::placeholder {
           font-family: 'Montserrat', sans-serif;
-          font-weight: 300;
-          font-size: 16px;
-          line-height: 155%;
-          color: map-get($colors, 'text');
+          font-weight: inherit;
+          font-size: inherit;
+          line-height: inherit;
+          color: inherit;
         }
       }
     }

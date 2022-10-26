@@ -1,0 +1,9 @@
+@import '../../styles/helpers/index.scss';
+
+.page-content {
+  margin: 140px 0 0;
+
+  @media screen and (max-width: $tablet-sm) {
+    margin: 70px 0 0;
+  }
+}

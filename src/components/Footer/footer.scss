@@ -1,6 +1,7 @@
 @import '../../styles/helpers/index.scss';
 
 .page-footer {
+  position: relative;
   color: map-get($colors, 'text');
 
   background-color: map-get($colors, 'grey');
@@ -8,13 +9,34 @@
   font-size: 24px;
   line-height: 36px;
 
+  &::before {
+    content: '';
+
+    background-image: url('../../static/images/pseudo/square.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: absolute;
+    top: -5%;
+    right: 30%;
+
+    height: 180px;
+    width: 180px;
+
+    user-select: none;
+
+    @media screen and (max-width: $tablet-sm) {
+      display: none;
+    }
+  }
+
   &__inner {
     @include space-between;
     padding: 125px 0 110px;
 
     @media screen and (max-width: $tablet-sm) {
       flex-direction: column;
-
       padding: 70px 0 50px;
     }
 

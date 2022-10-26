@@ -29,6 +29,8 @@ const PageTemplate = () => {
   return (
     <Layout pageId={pageData?.slug}>
       <Seo data={pageData?.yoast_head_json} />
+
+      <section style={{ height: 300 }} />
     </Layout>
   );
 };

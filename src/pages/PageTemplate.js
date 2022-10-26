@@ -4,7 +4,7 @@ import useFetch from 'react-fetch-hook';
 import { toast } from 'react-toastify';
 
 import { Layout, Seo, Spinner } from '../components';
-import { Hero, Areas } from '../sections';
+import { Hero, WhyWe, Areas } from '../sections';
 
 const ADMIN_URL = '';
 
@@ -30,6 +30,7 @@ const PageTemplate = () => {
     <Layout pageId={pageData?.slug}>
       <Seo data={pageData?.yoast_head_json} />
       <Hero title={pageData?.title.rendered} />
+      <WhyWe title={pageData?.title.rendered} />
       <Areas />
     </Layout>
   );

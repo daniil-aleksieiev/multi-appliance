@@ -1,0 +1,102 @@
+@import '../../styles/helpers/index.scss';
+
+.services {
+  position: relative;
+  margin: 140px 0 0;
+  padding: 130px 0 140px;
+  background-color: map-get($colors, 'grey');
+
+  @media screen and (max-width: $tablet-sm) {
+    margin: 70px 0 0;
+    padding: 70px 0;
+  }
+
+  &::before {
+    content: '';
+
+    background-image: url('../../static/images/pseudo/square.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: absolute;
+    top: 10%;
+    right: 5%;
+
+    height: 180px;
+    width: 180px;
+
+    user-select: none;
+
+    z-index: 2;
+
+    @media screen and (max-width: $tablet-sm) {
+      display: none;
+    }
+  }
+
+  .section-title {
+    &::before {
+      background-image: url('../../static/images/pseudo/section-title_services.svg');
+      right: 0;
+      bottom: -10px;
+      height: 20px;
+      width: 230px;
+
+      @media screen and (max-width: $tablet-sm) {
+        bottom: 5px;
+        right: -10px;
+      }
+    }
+  }
+
+  &__grid {
+    margin: 70px 0 0;
+
+    @include grid($columns: repeat(3, 1fr));
+
+    @media screen and (max-width: $tablet-sm) {
+      margin: 40px 0 0;
+    }
+
+    &--item {
+      position: relative;
+      display: block;
+      padding: 70px 40px;
+      background-color: #fff;
+      text-decoration: none;
+      color: map-get($colors, 'text');
+      @include align-center;
+      @include scale;
+
+      transition: all 0.3s ease;
+
+      &::before {
+        content: '';
+
+        background-image: url('../../static/images/pseudo/service.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        height: 50px;
+        width: 50px;
+
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+
+      &:hover {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      h5 {
+        margin: 0 0 0 20px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+      }
+    }
+  }
+}

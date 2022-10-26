@@ -1,0 +1,16 @@
+<svg width="87" height="75" viewBox="0 0 87 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M27 44C27 60.5685 40.4315 74 57 74C73.5685 74 87 60.5685 87 44C87 27.4315 73.5685 14 57 14C40.4315 14 27 27.4315 27 44Z" fill="#E7E7E7"/>
+<path d="M70 1H2C1.44772 1 1 1.44771 1 2V72.6379C1 73.1902 1.44771 73.6379 2 73.6379H70C70.5523 73.6379 71 73.1902 71 72.6379V2C71 1.44772 70.5523 1 70 1Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<path d="M9 19C9 25.0751 13.9249 30 20 30C26.0751 30 31 25.0751 31 19C31 12.9249 26.0751 8 20 8C13.9249 8 9 12.9249 9 19Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<path d="M14 19C14 22.3137 16.6863 25 20 25C23.3137 25 26 22.3137 26 19C26 15.6863 23.3137 13 20 13C16.6863 13 14 15.6863 14 19Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<path d="M46 19C46 22.3137 48.6863 25 52 25C55.3137 25 58 22.3137 58 19C58 15.6863 55.3137 13 52 13C48.6863 13 46 15.6863 46 19Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<path d="M14 48C14 51.3137 16.6863 54 20 54C23.3137 54 26 51.3137 26 48C26 44.6863 23.3137 42 20 42C16.6863 42 14 44.6863 14 48Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<path d="M46 48C46 51.3137 48.6863 54 52 54C55.3137 54 58 51.3137 58 48C58 44.6863 55.3137 42 52 42C48.6863 42 46 44.6863 46 48Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<path d="M41 19C41 25.0751 45.9249 30 52 30C58.0751 30 63 25.0751 63 19C63 12.9249 58.0751 8 52 8C45.9249 8 41 12.9249 41 19Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<path d="M9 48C9 54.0751 13.9249 59 20 59C26.0751 59 31 54.0751 31 48C31 41.9249 26.0751 37 20 37C13.9249 37 9 41.9249 9 48Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<path d="M41 48C41 54.0751 45.9249 59 52 59C58.0751 59 63 54.0751 63 48C63 41.9249 58.0751 37 52 37C45.9249 37 41 41.9249 41 48Z" stroke="#FC131F" stroke-width="2" stroke-miterlimit="22.93"/>
+<line x1="10" y1="67" x2="18" y2="67" stroke="#FC131F" stroke-width="2" stroke-linecap="round"/>
+<line x1="25" y1="67" x2="33" y2="67" stroke="#FC131F" stroke-width="2" stroke-linecap="round"/>
+<line x1="40" y1="67" x2="48" y2="67" stroke="#FC131F" stroke-width="2" stroke-linecap="round"/>
+<line x1="55" y1="67" x2="63" y2="67" stroke="#FC131F" stroke-width="2" stroke-linecap="round"/>
+</svg>

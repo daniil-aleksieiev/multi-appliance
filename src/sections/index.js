@@ -1,3 +1,4 @@
+import Hero from './Hero/Hero';
 import Areas from './Areas/Areas';
 
-export { Areas };
+export { Hero, Areas };

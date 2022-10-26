@@ -1,0 +1,133 @@
+@import '../../styles/helpers/index.scss';
+
+.hero {
+  padding: 60px 0;
+
+  background-image: url('../../static/images/bg/hero.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  color: #fff;
+
+  .container {
+    @include space-between;
+
+    @media screen and (max-width: $tablet-sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    @media screen and (max-width: $tablet-sm) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 120%;
+      text-transform: uppercase;
+
+      @media screen and (max-width: $tablet-sm) {
+        font-size: 38px;
+      }
+    }
+
+    .red-button {
+      margin: 40px 0 0;
+
+      @media screen and (max-width: $tablet-sm) {
+        margin: 40px auto 0;
+      }
+    }
+  }
+
+  &__awards {
+    margin: 20px 0 0;
+    @include align-center;
+
+    @media screen and (max-width: $tablet-sm) {
+      margin: 40px 0 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    & > img {
+      @include scale;
+
+      &:not(:last-of-type) {
+        margin: 0 40px 0 0;
+      }
+
+      @media screen and (max-width: $tablet-sm) {
+        margin: 0 0 20px;
+      }
+    }
+  }
+
+  &__coupon {
+    background-color: map-get($colors, 'grey');
+
+    @media screen and (max-width: $tablet-sm) {
+      margin: 50px 0 0;
+    }
+
+    &--inner {
+      @include space-between;
+      flex-direction: column;
+      margin: 10px;
+
+      padding: 45px 15px 60px;
+
+      text-align: center;
+
+      height: inherit;
+
+      background: #fff;
+      border: 1px dashed #777;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 120%;
+      color: map-get($colors, 'red');
+    }
+
+    span {
+      margin: 20px 0 45px;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 120%;
+
+      color: map-get($colors, 'text');
+    }
+
+    img {
+      height: 18px;
+    }
+
+    .red-button {
+      margin: 45px auto 0;
+      padding: 14px 30px;
+      max-width: 160px;
+    }
+
+    &--phone {
+      margin: 35px 0 0;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 32px;
+      color: map-get($colors, 'text');
+      &::before {
+        content: '\e806';
+        font-family: 'fontello';
+        margin-right: 10px;
+        color: map-get($colors, 'red');
+      }
+    }
+  }
+}

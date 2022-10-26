@@ -1,0 +1,136 @@
+@import '../../styles/helpers/index.scss';
+
+.reviews {
+  margin: -150px 0 0;
+
+  @media screen and (max-width: $tablet-sm) {
+    margin: 100px 0 0;
+  }
+
+  &__list {
+    padding-bottom: 50px;
+    &--card {
+      margin: 0 20px 20px;
+      padding: 20px 30px 50px;
+      background-color: #fff;
+      box-shadow: 0 0 20px 0 rgba(7, 7, 7, 0.2);
+
+      &__header {
+        @include align-center;
+
+        &--resource {
+          @include align-center;
+          justify-content: center;
+
+          background-color: map-get($colors, 'grey');
+          border-radius: 50%;
+
+          min-height: 80px;
+          min-width: 80px;
+
+          img {
+            height: 46px;
+          }
+        }
+        &--info {
+          margin: 0 0 0 25px;
+        }
+      }
+
+      &__stars {
+        margin: 40px 0 0;
+        color: map-get($colors, 'red');
+
+        i {
+          font-size: 25px;
+          &:not(:last-of-type) {
+            margin: 0 12px 0 0;
+          }
+        }
+      }
+
+      &__name {
+        display: block;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+        color: map-get($colors, 'text');
+      }
+
+      &__date {
+        display: block;
+        margin: 10px 0 0;
+        font-size: 16px;
+        line-height: 150%;
+        color: map-get($colors, 'text');
+      }
+
+      &__body {
+        margin: 40px 0 0;
+        max-height: 300px;
+        overflow: scroll;
+
+        @media screen and (max-width: $tablet-sm) {
+          max-height: unset;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 150%;
+          color: map-get($colors, 'text');
+
+          @media screen and (max-width: $tablet-sm) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .slick-slider {
+    .slick-next,
+    .slick-prev {
+      width: 60px;
+      height: 60px;
+      background: map-get($colors, 'red');
+      border: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      top: -50px;
+      border-radius: 50%;
+      cursor: pointer;
+      &::before {
+        font-family: 'fontello';
+        color: #fff;
+      }
+      @media screen and (max-width: $tablet-sm) {
+        top: -30px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+    .slick-next {
+      right: 20px;
+      &::before {
+        content: '\f105';
+      }
+      @media screen and (max-width: $tablet-sm) {
+        right: 0;
+      }
+    }
+    .slick-prev {
+      right: 100px;
+      left: unset;
+      &::before {
+        content: '\f104';
+      }
+      @media screen and (max-width: $tablet-sm) {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+}

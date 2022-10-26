@@ -1,10 +1,31 @@
 @import '../../styles/helpers/index.scss';
 
 .reviews {
+  position: relative;
   margin: -150px 0 0;
 
   @media screen and (max-width: $tablet-sm) {
     margin: 100px 0 0;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+
+    background-image: url('../../static/images/pseudo/square.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    width: 230px;
+    height: 230px;
+
+    @media screen and (max-width: $tablet-sm) {
+      display: none;
+    }
   }
 
   &__list {

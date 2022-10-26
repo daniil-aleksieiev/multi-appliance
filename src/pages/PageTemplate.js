@@ -13,6 +13,7 @@ import {
   Services,
   Counter,
   Reviews,
+  CallToAction,
   Areas,
 } from '../sections';
 
@@ -51,6 +52,7 @@ const PageTemplate = () => {
       <Services />
       <Counter />
       <Reviews />
+      <CallToAction />
       <Areas />
     </Layout>
   );

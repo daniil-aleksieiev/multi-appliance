@@ -1,0 +1,60 @@
+@import '../../styles/helpers/index.scss';
+
+.areas {
+  margin: 140px 0 0;
+  padding: 100px 0;
+
+  background-image: url('../../static/images/bg/areas.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  color: #fff;
+
+  @media screen and (max-width: $tablet-sm) {
+    padding: 50px 0;
+    margin: 70px 0 0;
+  }
+
+  .section-title {
+    &::before {
+      background-image: url('../../static/images/pseudo/section-title_areas.svg');
+      right: 0;
+      bottom: -10px;
+      height: 20px;
+      width: 250px;
+
+      @media screen and (max-width: $tablet-sm) {
+        width: 200px;
+      }
+    }
+  }
+
+  ul {
+    margin: 50px 0 0;
+    columns: 3;
+
+    @media screen and (max-width: $tablet-sm) {
+      margin: 30px 0 0;
+      columns: 2;
+    }
+
+    li {
+      @include align-center;
+      font-size: 18px;
+      line-height: 200%;
+
+      &::before {
+        content: '\f105';
+        font-family: 'fontello';
+        color: #fff;
+        margin-right: 15px;
+        font-weight: bold;
+      }
+
+      @media screen and (max-width: $tablet-sm) {
+        font-size: 14px;
+      }
+    }
+  }
+}

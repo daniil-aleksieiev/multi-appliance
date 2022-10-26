@@ -5,6 +5,8 @@ import axios from 'axios';
 
 import './getInTouchForm.scss';
 
+const MAIL_URL = '';
+
 const GetInTouchForm = () => {
   const { slug } = useParams();
   const [defaultServices, setDefaultService] = React.useState();
@@ -26,23 +28,26 @@ const GetInTouchForm = () => {
       case 'freezer-repair':
         setDefaultService('Freezer Repair');
         break;
-      case 'washer-repair':
-        setDefaultService('Washer Repair');
-        break;
       case 'dryer-repair':
         setDefaultService('Dryer Repair');
         break;
-      case 'dishwasher-repair':
-        setDefaultService('Dishwasher Repair');
-        break;
-      case 'range-repair':
-        setDefaultService('Range Repair');
+      case 'washer-repair':
+        setDefaultService('Washer Repair');
         break;
       case 'oven-repair':
         setDefaultService('Oven Repair');
         break;
-      case 'microwave-repair':
-        setDefaultService('Microwave Repair');
+      case 'stove-repair':
+        setDefaultService('Stove Repair');
+        break;
+      case 'dishwasher-repair':
+        setDefaultService('Dishwasher Repair');
+        break;
+      case 'ice-machine-repair':
+        setDefaultService('Ice Machine Repair');
+        break;
+      case 'range-repair':
+        setDefaultService('Range Repair');
         break;
       default:
         setDefaultService('');
@@ -68,10 +73,7 @@ const GetInTouchForm = () => {
     Object.entries(feedbackFrom).map((el) => formData.append(el[0], el[1]));
 
     try {
-      const response = await axios.post(
-        'https://control.a-techrepair.com/wp-json/contact-form-7/v1/contact-forms/140/feedback',
-        formData,
-      );
+      const response = await axios.post(MAIL_URL, formData);
 
       if (response.status === 200) {
         toast.success(response.data.message);
@@ -98,12 +100,13 @@ const GetInTouchForm = () => {
             <option hidden>Type of service *</option>
             <option value="Refrigerator Repair">Refrigerator Repair Diagnosis</option>
             <option value="Freezer Repair">Freezer Repair Diagnosis</option>
-            <option value="Washer Repair">Washer Repair Diagnosis</option>
             <option value="Dryer Repair">Dryer Repair Diagnosis</option>
-            <option value="Dishwasher Repair">Dishwasher Repair Diagnosis</option>
-            <option value="Range Repair">Range Repair Diagnosis</option>
+            <option value="Washer Repair">Washer Repair Diagnosis</option>
             <option value="Oven Repair">Oven Repair Diagnosis</option>
-            <option value="Microwave Repair">Microwave Repair Diagnosis</option>
+            <option value="Stove Repair">Stove Repair Diagnosis</option>
+            <option value="Dishwasher Repair">Dishwasher Repair Diagnosis</option>
+            <option value="Ice Machine Repair">Ice Machine Repair Diagnosis</option>
+            <option value="Range Repair">Range Repair Diagnosis</option>
           </select>
           <textarea name="message" required placeholder="Message *" onChange={handleChange} />
         </div>

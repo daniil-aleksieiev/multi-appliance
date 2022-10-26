@@ -13,9 +13,9 @@
         width: 100%;
         margin: 0 0 20px;
         padding: 10px 25px;
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid #fff;
-        color: #fff;
+        background: #fff;
+        border: none;
+        color: map-get($colors, 'text');
         font-size: 16px;
         appearance: none;
         -webkit-appearance: none;
@@ -24,7 +24,7 @@
           font-weight: 300;
           font-size: 16px;
           line-height: 155%;
-          color: #fff;
+          color: map-get($colors, 'text');
         }
       }
     }
@@ -51,6 +51,14 @@
 
     textarea {
       height: 190px;
+    }
+
+    .red-button {
+      max-width: 150px;
+
+      @media screen and (max-width: $tablet-sm) {
+        max-width: unset;
+      }
     }
   }
 }

@@ -1,0 +1,56 @@
+@import '../../styles/helpers/index.scss';
+
+.contact-our-specialists {
+  position: relative;
+  margin: 140px 0 0;
+  padding: 120px 0 140px;
+  background-color: map-get($colors, 'grey');
+
+  @media screen and (max-width: $tablet-sm) {
+    margin: 70px 0 0;
+    padding: 70px 0;
+  }
+
+  &::before {
+    content: '';
+
+    background-image: url('../../static/images/pseudo/form.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 210px;
+    height: 225px;
+
+    user-select: none;
+
+    @media screen and (max-width: $tablet-sm) {
+      display: none;
+    }
+  }
+
+  .section-title {
+    margin: 0 0 70px;
+
+    @media screen and (max-width: $tablet-sm) {
+      margin: 0 0 50px;
+    }
+
+    &::before {
+      background-image: url('../../static/images/pseudo/section-title_form.svg');
+      left: 25px;
+      bottom: -5px;
+      height: 20px;
+      width: 175px;
+
+      @media screen and (max-width: $tablet-sm) {
+        bottom: -20px;
+        left: 0;
+      }
+    }
+  }
+}

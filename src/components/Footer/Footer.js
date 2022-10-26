@@ -1,0 +1,70 @@
+import { Link, NavLink } from 'react-router-dom';
+
+import { contacts } from '../../static/contacts';
+import './footer.scss';
+
+const Footer = () => (
+  <footer className="page-footer">
+    <div className="container">
+      <div className="page-footer__inner">
+        <div>
+          <Link to="/" className="page-footer__logo">
+            <img src="/assets/images/logo.svg" alt="footer logo" />
+          </Link>
+
+          <p>FOLLOW US</p>
+
+          <div className="page-footer__social">
+            <a href="https://google.com" target="_blank" rel="noReferrer">
+              <i className="icon-google" />
+            </a>
+            <a href="https://fb.com" target="_blank" rel="noReferrer">
+              <i className="icon-facebook" />
+            </a>
+            <a href="https://yelp.com" target="_blank" rel="noReferrer">
+              <i className="icon-yelp" />
+            </a>
+          </div>
+        </div>
+
+        <div className="page-footer__contacts">
+          <a href={`tel:${contacts.phone}`}>{contacts.phone}</a>
+
+          <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+        </div>
+      </div>
+    </div>
+    <Underline />
+  </footer>
+);
+
+export default Footer;
+
+const Underline = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <div className="page-footer__underline">
+      <div className="container">
+        <div>
+          <span>
+            ©{currentYear} Multi Appliance. Home and Commercial Cervices.
+            <br className="mobile-br" /> All Rights Reserved.
+          </span>
+
+          <div className="page-footer__underline--links">
+            <NavLink to="/privacy-policy">Privacy Policy</NavLink>
+
+            <NavLink to="/accessibility-statement">Accessibility Statement</NavLink>
+
+            <NavLink to="/terms-of-use">Terms of Use</NavLink>
+          </div>
+        </div>
+
+        <a href="https://toporin.com" target="_blank" rel="noReferrer">
+          Designed by <strong>Toporin Studio®</strong> in California
+        </a>
+      </div>
+    </div>
+  );
+};

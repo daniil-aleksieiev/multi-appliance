@@ -1,0 +1,35 @@
+@import '../../styles/helpers/index.scss';
+
+.content-wrapper {
+  padding: 140px 0;
+
+  @media screen and (max-width: $tablet-sm) {
+    padding: 70px 0;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.24;
+    font-weight: bold;
+    margin: 0 0 30px;
+  }
+
+  p {
+    font-size: 16px;
+    color: map-get($colors, 'text');
+    &:not(:last-of-type) {
+      margin: 0 0 15px;
+    }
+
+    strong {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+  }
+
+  a {
+    color: map-get($colors, 'text');
+    text-decoration: underline !important;
+  }
+}

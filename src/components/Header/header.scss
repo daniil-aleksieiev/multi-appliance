@@ -1,0 +1,120 @@
+@import '../../styles/helpers/index.scss';
+
+.page-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: right;
+  z-index: 100;
+  transition: box-shadow 0.3s ease;
+
+  &.shadow {
+    box-shadow: 0px 5px 15px 0px rgba(#000, 0.5);
+  }
+
+  &__headline {
+    position: relative;
+    background-color: map-get($colors, 'grey');
+    color: map-get($colors, 'text');
+    height: 40px;
+
+    span {
+      font-size: 18px;
+      line-height: 40px;
+      font-weight: 600;
+
+      @media screen and (max-width: $tablet-sm) {
+        display: none;
+      }
+    }
+
+    &--phone {
+      display: none;
+
+      color: map-get($colors, 'text');
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 40px;
+
+      &::before {
+        content: '\e806';
+        font-family: 'fontello';
+        margin-right: 10px;
+      }
+
+      @media screen and (max-width: $tablet-sm) {
+        display: block;
+      }
+    }
+  }
+
+  &__logo {
+    height: 50px;
+
+    @media screen and (max-width: $tablet-sm) {
+      height: 30px;
+    }
+
+    img {
+      height: inherit;
+    }
+  }
+
+  &__links {
+    background-color: #fff;
+    height: 90px;
+
+    @media screen and (max-width: $tablet-sm) {
+      height: 60px;
+    }
+
+    .container {
+      @include align-center;
+      justify-content: space-between;
+    }
+
+    div {
+      @include align-center;
+    }
+
+    &--phone {
+      padding: 14px 20px;
+      @include align-center;
+      margin-right: 20px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+
+      color: map-get($colors, 'text');
+      border: 1px solid map-get($colors, 'text');
+      border-radius: 50px;
+
+      transition: all 0.3s ease;
+
+      @media screen and (max-width: $tablet-sm) {
+        display: none;
+      }
+
+      &::before {
+        content: '\e806';
+        font-family: 'fontello';
+        font-size: 20px;
+        margin-right: 15px;
+        color: map-get($colors, 'text');
+
+        transition: inherit;
+      }
+
+      &:hover {
+        background-color: map-get($colors, 'text');
+        color: #fff;
+
+        &::before {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

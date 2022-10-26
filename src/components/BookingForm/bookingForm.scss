@@ -1,0 +1,76 @@
+@import '../../styles/helpers/index.scss';
+
+.booking-form-wrapper {
+  padding: 100px 0;
+  margin: 0 auto;
+  text-align: center;
+
+  max-width: 600px;
+
+  @media screen and (max-width: $tablet-sm) {
+    padding: 70px 15px;
+  }
+
+  form {
+    margin: 40px 0 0;
+  }
+
+  input,
+  textarea,
+  select {
+    outline: none;
+    &:not([type='submit']) {
+      width: 100%;
+      margin: 0 0 20px;
+      padding: 10px 25px;
+      border: 1px solid map-get($colors, 'text');
+      color: map-get($colors, 'text');
+      font-size: 16px;
+      appearance: none;
+      -webkit-appearance: none;
+      &::placeholder {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 155%;
+        color: map-get($colors, 'text');
+      }
+    }
+  }
+
+  input[type='number'] {
+    appearance: none;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  input[type='submit'] {
+    border: none;
+
+    @media screen and (max-width: $tablet-sm) {
+      margin-top: 0 !important;
+    }
+  }
+
+  input,
+  select {
+    height: 50px;
+    &[type='submit'] {
+      cursor: pointer;
+      margin: 20px 0 0;
+    }
+  }
+
+  textarea {
+    height: 190px;
+
+    @media screen and (max-width: $tablet-sm) {
+      height: 100px;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import './helpers/reset.scss';
+@import './helpers/variables.scss';
+@import './helpers/mixins.scss';
+
+body {
+  height: inherit;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.24;
+  font-family: 'Montserrat', sans-serif;
+
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+#root {
+  height: inherit;
+
+  & > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+  }
+
+  main {
+    flex: 1 0 auto;
+    padding-top: 120px;
+    @media screen and (max-width: $tablet-sm) {
+      padding-top: 100px;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.red-button {
+  display: inline-block;
+  background-color: map-get($colors, 'red');
+  color: #fff;
+
+  padding: 14px 20px;
+
+  font-weight: 700;
+  font-size: 16px;
+
+  text-align: center;
+
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+
+  border-radius: 50px;
+
+  transition: all 0.3s ease;
+
+  @media screen and (max-width: $tablet-sm) {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 15px 0 rgba(209, 55, 61, 0.85);
+    background-color: #b83135;
+  }
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 120%;
+
+  @media screen and (max-width: $tablet-sm) {
+    font-size: 32px;
+    line-height: 120%;
+  }
+}
+
+.mobile-br {
+  display: none;
+  @media screen and (max-width: $tablet-sm) {
+    display: inline-block;
+  }
+}

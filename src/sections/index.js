@@ -7,6 +7,7 @@ import Services from './Services/Services';
 import Counter from './Counter/Counter';
 import Reviews from './Reviews/Reviews';
 import CallToAction from './CallToAction/CallToAction';
+import MakesAndModels from './MakesAndModels/MakesAndModels';
 import Areas from './Areas/Areas';
 
 export {
@@ -19,5 +20,6 @@ export {
   Counter,
   Reviews,
   CallToAction,
+  MakesAndModels,
   Areas,
 };

@@ -1,0 +1,126 @@
+@import '../../styles/helpers/index.scss';
+
+.makes-and-models {
+  position: relative;
+  margin: 140px 0 0;
+  padding: 0 0 140px;
+
+  @media screen and (max-width: $tablet-sm) {
+    margin: 70px 0 0;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    right: 40px;
+    top: -30%;
+
+    background-image: url('../../static/images/pseudo/square.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    width: 230px;
+    height: 230px;
+
+    @media screen and (max-width: $tablet-sm) {
+      display: none;
+    }
+  }
+
+  .section-title {
+    &::before {
+      background-image: url('../../static/images/pseudo/section-title_models.svg');
+      left: 10%;
+      bottom: -10px;
+      height: 15px;
+      width: 275px;
+
+      @media screen and (max-width: $tablet-sm) {
+        bottom: -20px;
+        left: 0;
+      }
+    }
+  }
+
+  &__list {
+    margin: 150px 0 0;
+    height: 320px;
+    &--item {
+      margin: 20px 0;
+      @include align-center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      @media screen and (max-width: $tablet-sm) {
+        margin: 0;
+      }
+      div {
+        @include align-center;
+        height: 80px;
+        @media screen and (max-width: $tablet-sm) {
+          max-width: 50%;
+          width: 100%;
+          height: 60px;
+          margin-bottom: 40px;
+        }
+        img {
+          height: 100%;
+          @media screen and (max-width: $tablet-sm) {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+
+  .slick-slider {
+    .slick-next,
+    .slick-prev {
+      width: 60px;
+      height: 60px;
+      background: #fff;
+      border: 1px solid map-get($colors, 'red');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      cursor: pointer;
+      &::before {
+        font-family: 'fontello';
+        color: map-get($colors, 'red');
+      }
+      @media screen and (max-width: $tablet-sm) {
+        top: -30px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+    .slick-next {
+      top: 120%;
+
+      @media screen and (max-width: $tablet-lg) and (orientation: landscape) {
+        top: 100%;
+      }
+
+      &::before {
+        content: '\f105';
+      }
+      // @media screen and (max-width: $tablet-sm) {
+      //   right: 0;
+      // }
+    }
+    .slick-prev {
+      top: -30%;
+      &::before {
+        content: '\f104';
+      }
+      // @media screen and (max-width: $tablet-sm) {
+      //   right: auto;
+      //   left: 0;
+      // }
+    }
+  }
+}

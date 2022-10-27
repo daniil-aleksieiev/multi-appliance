@@ -7,7 +7,6 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import AccessibilityStatement from './pages/AccessibilityStatement';
 import TermsOfUse from './pages/TermsOfUse';
 import ThankYouPage from './pages/ThankYouPage';
-
 import PageNotFound from './pages/404';
 
 const App = () => (

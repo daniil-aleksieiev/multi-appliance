@@ -36,6 +36,8 @@ const PageTemplate = () => {
     if (error) toast.error('Data loading error. Please reload the page!');
   }, [error]);
 
+  // TODO: Add check for SLUG, if not, then redirect to 404
+
   if (isLoading) return <Spinner />;
 
   return (

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import PageTemplate from './pages/PageTemplate';
+import Booking from './pages/BookNow';
 
 const App = () => (
   <BrowserRouter>
@@ -8,7 +9,7 @@ const App = () => (
       <Route path="/" element={<Navigate replace to="/appliance-repair" />} />
 
       <Route path="/:slug" element={<PageTemplate />} />
-      {/* <Route path="/book-now" element={<Booking />} /> */}
+      <Route path="/book-now" element={<Booking />} />
 
       {/* <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/accessibility-statement" element={<AccessibilityStatement />} />

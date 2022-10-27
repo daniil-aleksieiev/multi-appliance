@@ -25,29 +25,26 @@ const BookingForm = ({ prevLocation }) => {
       case 'freezer-repair':
         setDefaultService('Freezer Repair');
         break;
-      case 'washer-repair':
-        setDefaultService('Washer Repair');
-        break;
       case 'dryer-repair':
         setDefaultService('Dryer Repair');
         break;
-      case 'dishwasher-repair':
-        setDefaultService('Dishwasher Repair');
-        break;
-      case 'range-repair':
-        setDefaultService('Range Repair');
+      case 'washer-repair':
+        setDefaultService('Washer Repair');
         break;
       case 'oven-repair':
         setDefaultService('Oven Repair');
         break;
-      case 'microwave-repair':
-        setDefaultService('Microwave Repair');
-        break;
       case 'stove-repair':
         setDefaultService('Stove Repair');
         break;
+      case 'dishwasher-repair':
+        setDefaultService('Dishwasher Repair');
+        break;
       case 'ice-machine-repair':
         setDefaultService('Ice Machine Repair');
+        break;
+      case 'range-repair':
+        setDefaultService('Range Repair');
         break;
       default:
         setDefaultService('');
@@ -93,12 +90,13 @@ const BookingForm = ({ prevLocation }) => {
           <option hidden>Type of service *</option>
           <option value="Refrigerator Repair">Refrigerator Repair Diagnosis</option>
           <option value="Freezer Repair">Freezer Repair Diagnosis</option>
-          <option value="Washer Repair">Washer Repair Diagnosis</option>
           <option value="Dryer Repair">Dryer Repair Diagnosis</option>
-          <option value="Dishwasher Repair">Dishwasher Repair Diagnosis</option>
-          <option value="Range Repair">Range Repair Diagnosis</option>
+          <option value="Washer Repair">Washer Repair Diagnosis</option>
           <option value="Oven Repair">Oven Repair Diagnosis</option>
-          <option value="Microwave Repair">Microwave Repair Diagnosis</option>
+          <option value="Stove Repair">Stove Repair Diagnosis</option>
+          <option value="Dishwasher Repair">Dishwasher Repair Diagnosis</option>
+          <option value="Ice Machine Repair">Ice Machine Repair Diagnosis</option>
+          <option value="Range Repair">Range Repair Diagnosis</option>
         </select>
         <input name="first_name" required type="text" placeholder="First Name *" onChange={handleChange} />
         <input name="last_name" required type="text" placeholder="Last Name *" onChange={handleChange} />

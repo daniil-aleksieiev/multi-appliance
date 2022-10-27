@@ -6,4 +6,122 @@
   @media screen and (max-width: $tablet-sm) {
     margin: 70px 0 0;
   }
+
+  .container {
+    @include space-between;
+  }
+
+  .section-title {
+    &::before {
+      background-image: url('../../static/images/pseudo/section-title_content.svg');
+      right: 0;
+      top: 65px;
+      height: 16px;
+      width: 215px;
+
+      @media screen and (max-width: $tablet-sm) {
+        top: 45px;
+        right: -75px;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+
+    & > div {
+      margin: 45px 0 0;
+
+      @media screen and (max-width: $tablet-sm) {
+        margin: 20px 0 0;
+      }
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 155%;
+      color: map-get($colors, 'text');
+    }
+
+    ul {
+      margin: 45px 0 0;
+      font-size: 18px;
+      line-height: 200%;
+      color: map-get($colors, 'text');
+
+      @media screen and (max-width: $tablet-sm) {
+        margin: 20px 0 0;
+        font-size: 16px;
+      }
+
+      li {
+        @include align-center;
+
+        &::before {
+          content: '\f105';
+          font-family: 'fontello';
+          color: map-get($colors, 'red');
+          margin-right: 15px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    max-width: 50%;
+    width: 100%;
+
+    @media screen and (max-width: $tablet-sm) {
+      display: none;
+    }
+
+    &::before {
+      content: '';
+
+      background-image: url('../../static/images/pseudo/square.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      position: absolute;
+      bottom: -10%;
+      left: -15%;
+
+      height: 180px;
+      width: 180px;
+
+      user-select: none;
+
+      @media screen and (max-width: $tablet-sm) {
+        display: none;
+      }
+    }
+
+    &--inner {
+      max-height: 585px;
+      position: relative;
+
+      & > div {
+        position: absolute;
+        right: 0;
+        top: -45px;
+
+        z-index: -1;
+
+        max-width: 420px;
+        width: 100%;
+        height: 630px;
+        background-color: map-get($colors, 'grey');
+      }
+
+      img {
+        max-height: inherit;
+      }
+    }
+  }
 }

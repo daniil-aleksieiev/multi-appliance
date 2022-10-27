@@ -36,7 +36,7 @@ const Satisfaction = () => (
 
             <hr />
 
-            <div className="reviews">
+            <div className="reviews_count">
               <img src={el.logo} alt="resource logo" />
 
               <span>{el.reviews} reviews</span>

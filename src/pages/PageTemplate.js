@@ -44,11 +44,11 @@ const PageTemplate = () => {
       <Hero title={pageData?.title.rendered} />
       <WhyWe title={pageData?.title.rendered} />
       <ContactOurSpecialists />
-      {/* <PageContent
+      <PageContent
         title={pageData?.title.rendered}
         content={pageData?.content.rendered}
         image={pageData?.acf.main_image}
-      /> */}
+      />
       <Satisfaction />
       <Services />
       <Counter />

@@ -23,7 +23,7 @@ const TermsOfUse = () => {
   if (isLoading) return <Spinner />;
 
   return (
-    <Layout>
+    <Layout pageId="terms-of-use">
       <Seo />
       <section>
         <ContentBlock title={pageData?.title.rendered} content={pageData?.content.rendered} />

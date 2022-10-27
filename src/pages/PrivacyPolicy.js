@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
   if (isLoading) return <Spinner />;
 
   return (
-    <Layout>
+    <Layout pageId="privacy-policy">
       <Seo />
       <section>
         <ContentBlock title={pageData?.title.rendered} content={pageData?.content.rendered} />

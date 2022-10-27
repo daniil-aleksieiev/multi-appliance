@@ -23,7 +23,7 @@ const AccessibilityStatement = () => {
   if (isLoading) return <Spinner />;
 
   return (
-    <Layout>
+    <Layout pageId="accessibility-statement">
       <Seo />
       <section>
         <ContentBlock title={pageData?.title.rendered} content={pageData?.content.rendered} />

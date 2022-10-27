@@ -1,17 +1,17 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import { contacts } from '../../static/contacts';
 import './header.scss';
 
 const Header = () => {
-  const [shadow, setShadow] = React.useState(false);
+  const [shadow, setShadow] = useState(false);
 
   const handleScroll = () => {
     setShadow(window.scrollY > 142);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

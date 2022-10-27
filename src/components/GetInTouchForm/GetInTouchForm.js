@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -9,9 +9,9 @@ const MAIL_URL = '';
 
 const GetInTouchForm = () => {
   const { slug } = useParams();
-  const [defaultServices, setDefaultService] = React.useState();
+  const [defaultServices, setDefaultService] = useState();
 
-  const [feedbackFrom, setFeedbackForm] = React.useState({
+  const [feedbackFrom, setFeedbackForm] = useState({
     first_name: '',
     last_name: '',
     email: '',
@@ -20,7 +20,7 @@ const GetInTouchForm = () => {
     message: '',
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     switch (slug) {
       case 'refrigerator-repair':
         setDefaultService('Refrigerator Repair');

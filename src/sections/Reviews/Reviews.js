@@ -50,19 +50,17 @@ const reviews = [
   },
 ];
 
-const Reviews = ({ data }) => {
-  return (
-    <section className="reviews">
-      <div className="container">
-        <Slider className="reviews__list" {...sliderSettings}>
-          {reviews?.map((item, index) => (
-            <ReviewCard {...{ review: item, key: index }} />
-          ))}
-        </Slider>
-      </div>
-    </section>
-  );
-};
+const Reviews = ({ data }) => (
+  <section className="reviews">
+    <div className="container">
+      <Slider className="reviews__list" {...sliderSettings}>
+        {reviews?.map((item, index) => (
+          <ReviewCard {...{ review: item, key: index }} />
+        ))}
+      </Slider>
+    </div>
+  </section>
+);
 
 export default Reviews;
 

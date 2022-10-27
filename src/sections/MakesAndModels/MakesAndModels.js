@@ -52,21 +52,19 @@ const models = [
   ],
 ];
 
-const MakesAndModels = () => {
-  return (
-    <section className="makes-and-models">
-      <div className="container">
-        <h2 className="section-title">We Fix All Makes & Models</h2>
+const MakesAndModels = () => (
+  <section className="makes-and-models">
+    <div className="container">
+      <h2 className="section-title">We Fix All Makes & Models</h2>
 
-        <Slider {...sliderSettings} className="makes-and-models__list">
-          {models.map((el, index) => (
-            <SliderCard data={el} key={index} />
-          ))}
-        </Slider>
-      </div>
-    </section>
-  );
-};
+      <Slider {...sliderSettings} className="makes-and-models__list">
+        {models.map((el, index) => (
+          <SliderCard data={el} key={index} />
+        ))}
+      </Slider>
+    </div>
+  </section>
+);
 
 export default MakesAndModels;
 

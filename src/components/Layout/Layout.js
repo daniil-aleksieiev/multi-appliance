@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,13 +10,13 @@ import { contacts } from '../../static/contacts';
 import './layout.scss';
 
 const Layout = ({ pageId, children }) => {
-  const [isVisible, setVisibility] = React.useState(false);
+  const [isVisible, setVisibility] = useState(false);
 
   const handleScroll = () => {
     setVisibility(window.scrollY > 250);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

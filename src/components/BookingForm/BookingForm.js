@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
@@ -7,8 +7,8 @@ import './bookingForm.scss';
 const MAIL_URL = '';
 
 const BookingForm = ({ prevLocation }) => {
-  const [defaultServices, setDefaultService] = React.useState('');
-  const [bookingFrom, setBookingForm] = React.useState({
+  const [defaultServices, setDefaultService] = useState('');
+  const [bookingFrom, setBookingForm] = useState({
     first_name: '',
     last_name: '',
     email: '',
@@ -17,7 +17,7 @@ const BookingForm = ({ prevLocation }) => {
     message: '',
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     switch (prevLocation) {
       case 'refrigerator-repair':
         setDefaultService('Refrigerator Repair');

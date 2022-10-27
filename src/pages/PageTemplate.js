@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from 'react-fetch-hook';
 import { toast } from 'react-toastify';
@@ -22,17 +22,17 @@ const ADMIN_URL = '';
 
 const PageTemplate = () => {
   const { slug } = useParams();
-  const [pageData, setPageData] = React.useState();
+  const [pageData, setPageData] = useState();
 
   const { isLoading, data, error } = useFetch(`${ADMIN_URL}/pages?slug=${slug}`);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (data) {
       setPageData(data[0]);
     }
   }, [data]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (error) toast.error('Data loading error. Please reload the page!');
   }, [error]);
 

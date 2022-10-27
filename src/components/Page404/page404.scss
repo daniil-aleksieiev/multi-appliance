@@ -1,0 +1,40 @@
+@import '../../styles/helpers/index.scss';
+
+.page404-content {
+  @include align-center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 70px 0;
+  text-align: center;
+
+  h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    margin: 45px 0 30px;
+
+    @media screen and (max-width: $tablet-sm) {
+      font-size: 24px;
+    }
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: $tablet-sm) {
+      font-size: 16px;
+    }
+  }
+
+  a {
+    color: map-get($colors, 'red');
+    &:hover {
+      text-decoration: underline !important;
+    }
+    i {
+      margin-right: 10px;
+    }
+  }
+}

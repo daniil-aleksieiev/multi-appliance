@@ -6,5 +6,7 @@ import Spinner from './Spinner/Spinner';
 import GetInTouchForm from './GetInTouchForm/GetInTouchForm';
 import BookingForm from './BookingForm/BookingForm';
 import ContentBlock from './ContentBlock/ContentBlock';
+import ThankYou from './ThankYou/ThankYou';
+import Page404 from './Page404/Page404';
 
-export { Layout, Header, Footer, Seo, Spinner, GetInTouchForm, BookingForm, ContentBlock };
+export { Layout, Header, Footer, Seo, Spinner, GetInTouchForm, BookingForm, ContentBlock, ThankYou, Page404 };

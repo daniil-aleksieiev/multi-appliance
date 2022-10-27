@@ -1,9 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
 
-import { contacts } from '../../static/contacts';
 import './footer.scss';
 
-const Footer = () => (
+const Footer = ({ contacts, social_networks }) => (
   <footer className="page-footer">
     <div className="container">
       <div className="page-footer__inner">
@@ -15,22 +14,22 @@ const Footer = () => (
           <p>FOLLOW US</p>
 
           <div className="page-footer__social">
-            <a href="https://google.com" target="_blank" rel="noReferrer">
+            <a href={social_networks?.google} target="_blank" rel="noReferrer">
               <i className="icon-google" />
             </a>
-            <a href="https://fb.com" target="_blank" rel="noReferrer">
+            <a href={social_networks?.facebook} target="_blank" rel="noReferrer">
               <i className="icon-facebook" />
             </a>
-            <a href="https://yelp.com" target="_blank" rel="noReferrer">
+            <a href={social_networks?.yelp} target="_blank" rel="noReferrer">
               <i className="icon-yelp" />
             </a>
           </div>
         </div>
 
         <div className="page-footer__contacts">
-          <a href={`tel:${contacts.phone}`}>{contacts.phone}</a>
+          <a href={`tel:${contacts?.phone}`}>{contacts?.phone}</a>
 
-          <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+          <a href={`mailto:${contacts?.email}`}>{contacts?.email}</a>
         </div>
       </div>
     </div>

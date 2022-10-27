@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './bookingForm.scss';
 
-const MAIL_URL = '';
+const MAIL_URL = 'https://admin.fixcrewappliance.com/wp-json/contact-form-7/v1/contact-forms/29/feedback';
 
 const BookingForm = ({ prevLocation }) => {
   const [defaultServices, setDefaultService] = useState('');

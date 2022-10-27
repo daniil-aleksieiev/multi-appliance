@@ -1,16 +1,35 @@
-import { Layout, Seo, ContentBlock } from '../components';
+import { useState, useEffect } from 'react';
+import useFetch from 'react-fetch-hook';
+import { toast } from 'react-toastify';
+import { Layout, Seo, Spinner, ContentBlock } from '../components';
 
-const content = `
-\n<p><strong>Generic Privacy Policy</strong></p>\n\n\n\n<p>This online privacy policy (“Policy”), effective October 1, 2022, applies to information collected through Multi Appliance and its Subsidiaries’ (Multi Appliance)&nbsp; websites, social media outlets, and/or online services on which it is posted, but only to extent that Multi Appliance has control over such information. Some, but not necessarily all, of the information we collect may be “personal information”—information that identifies you personally.</p>\n\n\n\n<p>As legally defined, “personally identifiable information” refers to details collected on the Internet about an individual consumer, including an individual’s first and last name, a physical street address, an email address, a telephone number, a Social Security number, or any other information that permits a specific individual to be contacted physically or online. The term extends to details such as a person’s birthday, height, weight, or hair color that are collected online and stored by an operator in a personally identifiable form.</p>\n\n\n\n<p>This Policy may be supplemented, amended, or even replaced by additional privacy notices (“Privacy Notices”), typically provided at the time we collect your information. We reserve the right to update or modify the Policy or any Privacy Notice at any time without prior notice.</p>\n\n\n\n<p>By using this site, social media outlet, or online service you are consenting to the collection, use, disclosure, and transfer of your information as described in this Policy (and any applicable Privacy Notices). If you do not consent to such use you may not use this site, feed, or service.</p>\n\n\n\n<p>This Policy is part of our Terms of Use that govern the use of our site, social media feed, or online service.</p>\n\n\n\n<p><strong>User Choices</strong></p>\n\n\n\n<p>This Policy describes some of your choices and we may ask you to indicate your choices at the time and on the page where you provide your information.</p>\n\n\n\n<p>California law requires us to explain how our system responds to any “Do-Not-Track (‘DNT’) signal” delivered by your browser. We currently cannot and do not make any guarantee that we will honor DNT signals. Third parties, such as Google and others, may be able to track information through our site, social media outlets, and/or online services.</p>\n\n\n\n<p>You may change your preferences regarding the use of information by notifying us in writing. If at any time you wish to be taken off our mailing lists, please contact us using the information provided or simply use the “unsubscribe” handle at the bottom of each electronic advertising or news-related communication.</p>\n\n\n\n<p><strong>Collected Information</strong></p>\n\n\n\n<p>We collect and use the information, including any personal information, you provide when you use this site, social media outlet, or online services. We may obtain your information (e.g. Facebook or Twitter), including personal information, you previously provided to a third-party social media platform. We may also collect information that is sent to us automatically by your web browser or mobile device. This information depends on your device and service settings, but typically includes your IP address, the name of your operating system, the name and version of your browser, the date and time of your visit, and the pages you visit.</p>\n\n\n\n<p>This personal information typically includes:</p>\n\n\n\n<ul><li>Name (First and Last)</li><li>Email Address</li><li>Phone Number (cell, home or work)</li><li>Home Address</li></ul>\n\n\n\n<p>From time to time additional information may be acquired by the user’s consent e.g. credit card information, alternate contacts, or place of work.</p>\n\n\n\n<p><strong>Use of Cookies</strong></p>\n\n\n\n<p>We use “cookies” and other technologies to collect information and support certain features. Typically, if you do not wish to receive cookies, you may set your browser to reject them or to alert you when a cookie is placed on your computer (this may or may not affect your use of the site).</p>\n\n\n\n<p>Other third parties may deliver cookies to your computer or mobile device for the purpose of tracking your online behaviors over time and across nonaffiliated websites and/or delivering targeted advertisements either on this Site or on other websites.</p>\n\n\n\n<p><strong>Use of Your Information</strong></p>\n\n\n\n<p>We use the information we collect to meet your service and information requests as well as to provide you with the best possible customer service. We do not sell, rent or lease this information to anyone.</p>\n\n\n\n<p>We may transfer necessary customer information to service providers, vendors, and other companies who support our business, delivery services, and technical infrastructure services including those analyzing how our services are used and measuring the effectiveness of ads and services, providing customer service, facilitating payments, or conducting surveys.</p>\n\n\n\n<p>Any personal information contained in user-generated content (UGC) on our site, social media outlets, or online services can be read, collected, or used by others and is outside our control. We also may use, with or without your consent, limited information for advertising or promotional purposes, including your name, comments, and general location. Therefore, you should have no expectation of privacy with respect to the UGC you submit on or through our site, social media outlets, or online services.</p>\n\n\n\n<p>We may provide functionality that encourages you to automatically post information to a third-party social media platform (such as Facebook or Yelp) and such information may include your location, name, purchases, and /or social media identity. You should have no expectation of privacy in those actions. If you choose to link your profile to our site(s), social media outlets, or online services with an account on a third-party social media platform, we may share the information in your profile with that third-party platform. We may also use third-party social media platforms to offer you interest-based ads based on your personal information.</p>\n\n\n\n<p>Your information may be transferred to a successor organization.</p>\n\n\n\n<p>We may disclose your information when we, in good faith, believe disclosure is appropriate to comply with the law, a court order, or a subpoena. We may also disclose your information to prevent or investigate a possible crime, such as fraud or identity theft; to protect the security of this Site; to enforce or apply our Terms of Use or other agreements; or to protect our own rights or property or the rights, property or safety of our users or others.</p>\n\n\n\n<p><strong>Retention of Personal Information</strong></p>\n\n\n\n<p>We retain your information collected on this site, for each and every category listed above, for as long as we deem necessary to provide the services, products, and information you request, or as long as permitted by applicable law.</p>\n\n\n\n<p><strong>Site Hosting</strong></p>\n\n\n\n<p>Multi Appliance is a U.S. corporation and its sites, social media outlets, and online services are designed and intended for a U.S. audience. The servers that support our digital presence and on which we store the information you provide to us electronically may be located in a country other than where you reside. U.S. data protection laws may provide more or less protection as the data protection laws are in force in some other countries. If you are located in a country other than the United States, by using this site, social media outlet, or online service you consent to the transfer of your information to the United States and to be subject to the laws and regulations thereof.</p>\n\n\n\n<p><strong>Governing Law</strong></p>\n\n\n\n<p>This Policy shall be governed under the laws of the State of California, the United States of America without regard to its conflicts of law provisions.</p>\n
-`;
+const ADMIN_URL = 'https://admin.fixcrewappliance.com/wp-json/wp/v2';
 
-const PrivacyPolicy = () => (
-  <Layout>
-    <Seo />
-    <section>
-      <ContentBlock title="Privacy Policy" content={content} />
-    </section>
-  </Layout>
-);
+const PrivacyPolicy = () => {
+  const [pageData, setPageData] = useState();
+
+  const { isLoading, data, error } = useFetch(`${ADMIN_URL}/policy?slug=privacy-policy`);
+
+  useEffect(() => {
+    if (data) {
+      setPageData(data[0]);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (error) toast.error('Data loading error. Please reload the page!');
+  }, [error]);
+
+  if (isLoading) return <Spinner />;
+
+  return (
+    <Layout>
+      <Seo />
+      <section>
+        <ContentBlock title={pageData?.title.rendered} content={pageData?.content.rendered} />
+      </section>
+    </Layout>
+  );
+};
 
 export default PrivacyPolicy;

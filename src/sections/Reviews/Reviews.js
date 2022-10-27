@@ -23,38 +23,11 @@ const sliderSettings = {
   ],
 };
 
-const reviews = [
-  {
-    resource: 'Google',
-    date: '14/06/2021',
-    customer_name: 'Cameron Williamson',
-    text: 'Great service and described quote on price. Fast service within 1hr. Alex explained everything he was doing in easy to understand words. Great personality and attitude. Gave receipt and his cell number in case there were any further problems. There was a hiccup, he explained and problem resolved over phone. Call him, he quick and professional.',
-  },
-  {
-    resource: 'Google',
-    date: '14/06/2021',
-    customer_name: 'Cameron Williamson',
-    text: 'Great service and described quote on price. Fast service within 1hr. Alex explained everything he was doing in easy to understand words. Great personality and attitude. Gave receipt and his cell number in case there were any further problems. There was a hiccup, he explained and problem resolved over phone. Call him, he quick and professional.',
-  },
-  {
-    resource: 'Facebook',
-    date: '10/08/2021',
-    customer_name: 'Cameron Williamson',
-    text: 'Alex my representative was knowledgeable, courteous,, and found the right air conditioning/furnace for me to save on electricity and be extremely efficient. It is a Carrier hybrid system and two Carrier representatives were at my home most of the day to ensure it was working correctly. Love the system.',
-  },
-  {
-    resource: 'Yelp',
-    date: '05/12/2021',
-    customer_name: 'Cameron Williamson',
-    text: 'Alex my representative was knowledgeable, courteous,, and found the right air conditioning/furnace for me to save on electricity and be extremely efficient. It is a Carrier hybrid system and two Carrier representatives were at my home most of the day to ensure it was working correctly. Love the system.',
-  },
-];
-
 const Reviews = ({ data }) => (
   <section className="reviews">
     <div className="container">
       <Slider className="reviews__list" {...sliderSettings}>
-        {reviews?.map((item, index) => (
+        {data?.map((item, index) => (
           <ReviewCard {...{ review: item, key: index }} />
         ))}
       </Slider>

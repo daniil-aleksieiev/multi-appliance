@@ -19,10 +19,13 @@
   }
 
   &__content {
+    max-width: 620px;
+
     @media screen and (max-width: $tablet-sm) {
       display: flex;
       justify-content: center;
       flex-direction: column;
+      max-width: unset;
     }
 
     h1 {

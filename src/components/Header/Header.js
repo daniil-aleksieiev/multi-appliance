@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import { contacts } from '../../static/contacts';
 import './header.scss';
 
-const Header = () => {
+const Header = ({ contacts }) => {
   const [shadow, setShadow] = useState(false);
 
   const handleScroll = () => {
@@ -18,28 +17,28 @@ const Header = () => {
 
   return (
     <header className={`page-header ${shadow && 'shadow'}`}>
-      <HeadLine />
+      <HeadLine phone={contacts?.phone} />
 
-      <Links />
+      <Links phone={contacts?.phone} />
     </header>
   );
 };
 
 export default Header;
 
-const HeadLine = () => (
+const HeadLine = ({ phone }) => (
   <div className="page-header__headline">
     <div className="container">
       <span>Serving San Diego and Surrounding Areas</span>
 
-      <a href={`tel:${contacts.phone}`} className="page-header__headline--phone">
-        {contacts.phone}
+      <a href={`tel:${phone}`} className="page-header__headline--phone">
+        {phone}
       </a>
     </div>
   </div>
 );
 
-const Links = () => (
+const Links = ({ phone }) => (
   <div className="page-header__links">
     <div className="container">
       <Link to="/" className="page-header__logo">
@@ -47,8 +46,8 @@ const Links = () => (
       </Link>
 
       <div>
-        <a href={`tel:${contacts.phone}`} className="page-header__links--phone">
-          {contacts.phone}
+        <a href={`tel:${phone}`} className="page-header__links--phone">
+          {phone}
         </a>
 
         <NavLink to="/book-now" className="red-button" state={{ prevLocation: window.location.pathname.split('/')[1] }}>

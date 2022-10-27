@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import './getInTouchForm.scss';
 
-const MAIL_URL = '';
+const MAIL_URL = 'https://admin.fixcrewappliance.com/wp-json/contact-form-7/v1/contact-forms/29/feedback';
 
 const GetInTouchForm = () => {
   const { slug } = useParams();

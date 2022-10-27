@@ -1,17 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
-import { contacts } from '../../static/contacts';
 import './hero.scss';
 
-const awards = [
-  '/assets/images/awards/1.svg',
-  '/assets/images/awards/2.svg',
-  '/assets/images/awards/3.svg',
-  '/assets/images/awards/4.svg',
-  '/assets/images/awards/5.svg',
-];
-
-const Hero = ({ title }) => (
+const Hero = ({ title, phone, awards }) => (
   <section className="hero">
     <div className="container">
       <div className="hero__content">
@@ -25,7 +16,7 @@ const Hero = ({ title }) => (
 
         <div className="hero__awards">
           {awards.map((el, index) => (
-            <img src={el} key={index} alt="home advisor" />
+            <img src={el.icon} key={index} alt={`Award #${index + 1}`} />
           ))}
         </div>
 
@@ -53,8 +44,8 @@ const Hero = ({ title }) => (
             Book Now
           </NavLink>
 
-          <a href={`tel:${contacts.phone}`} className="hero__coupon--phone">
-            {contacts.phone}
+          <a href={`tel:${phone}`} className="hero__coupon--phone">
+            {phone}
           </a>
         </div>
       </div>

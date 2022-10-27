@@ -1,21 +1,6 @@
 import './satisfaction.scss';
 
-const reviews = [
-  {
-    logo: '/assets/images/logos/google_colored.svg',
-    reviews: 102,
-  },
-  {
-    logo: '/assets/images/logos/fb_colored.svg',
-    reviews: 256,
-  },
-  {
-    logo: '/assets/images/logos/yelp_colored.svg',
-    reviews: 202,
-  },
-];
-
-const Satisfaction = () => (
+const Satisfaction = ({ data }) => (
   <section className="satisfaction">
     <div className="container">
       <h2 className="section-title">
@@ -24,7 +9,7 @@ const Satisfaction = () => (
       </h2>
 
       <div className="satisfaction__grid">
-        {reviews.map((el, index) => (
+        {data?.map((el, index) => (
           <div className="satisfaction__grid--item" key={index}>
             <div className="stars">
               <i className="icon-star" />
@@ -39,7 +24,7 @@ const Satisfaction = () => (
             <div className="reviews_count">
               <img src={el.logo} alt="resource logo" />
 
-              <span>{el.reviews} reviews</span>
+              <span>{el.number_of_reviews} reviews</span>
             </div>
           </div>
         ))}

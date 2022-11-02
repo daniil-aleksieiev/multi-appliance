@@ -42,7 +42,7 @@ const Links = ({ phone }) => (
   <div className="page-header__links">
     <div className="container">
       <Link to="/" className="page-header__logo">
-        <img src="/assets/images/logo.svg" alt="header logo" />
+        <img src="/assets/images/logo_colored.svg" alt="header logo" />
       </Link>
 
       <div>

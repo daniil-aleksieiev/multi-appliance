@@ -8,7 +8,7 @@ const Footer = ({ contacts, social_networks }) => (
       <div className="page-footer__inner">
         <div>
           <Link to="/" className="page-footer__logo">
-            <img src="/assets/images/logo.svg" alt="footer logo" />
+            <img src="/assets/images/logo_colored.svg" alt="footer logo" />
           </Link>
 
           {/* <p>FOLLOW US</p>

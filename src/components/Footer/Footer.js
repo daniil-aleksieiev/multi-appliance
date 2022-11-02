@@ -11,7 +11,7 @@ const Footer = ({ contacts, social_networks }) => (
             <img src="/assets/images/logo.svg" alt="footer logo" />
           </Link>
 
-          <p>FOLLOW US</p>
+          {/* <p>FOLLOW US</p>
 
           <div className="page-footer__social">
             <a href={social_networks?.google} target="_blank" rel="noReferrer">
@@ -23,7 +23,7 @@ const Footer = ({ contacts, social_networks }) => (
             <a href={social_networks?.yelp} target="_blank" rel="noReferrer">
               <i className="icon-yelp" />
             </a>
-          </div>
+          </div> */}
         </div>
 
         <div className="page-footer__contacts">

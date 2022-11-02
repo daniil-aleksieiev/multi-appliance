@@ -29,7 +29,7 @@ export default Header;
 const HeadLine = ({ phone }) => (
   <div className="page-header__headline">
     <div className="container">
-      <span>Serving San Diego and Surrounding Areas</span>
+      <span>Serving Coachella Valley and Surrounding Areas</span>
 
       <a href={`tel:${phone}`} className="page-header__headline--phone">
         {phone}

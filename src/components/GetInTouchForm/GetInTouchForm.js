@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import './getInTouchForm.scss';
@@ -9,6 +9,7 @@ const MAIL_URL = 'https://admin.fixcrewappliance.com/wp-json/contact-form-7/v1/c
 
 const GetInTouchForm = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [defaultServices, setDefaultService] = useState();
 
   const [feedbackFrom, setFeedbackForm] = useState({
@@ -78,6 +79,7 @@ const GetInTouchForm = () => {
       if (response.status === 200) {
         toast.success(response.data.message);
         e.target.reset();
+        navigate('/thank-you');
       }
     } catch (error) {
       toast.error('Ooops! Something went wrong! Please, try again!');

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
@@ -7,6 +8,7 @@ import './bookingForm.scss';
 const MAIL_URL = 'https://admin.fixcrewappliance.com/wp-json/contact-form-7/v1/contact-forms/29/feedback';
 
 const BookingForm = ({ prevLocation }) => {
+  const navigate = useNavigate();
   const [defaultServices, setDefaultService] = useState('');
   const [bookingFrom, setBookingForm] = useState({
     first_name: '',
@@ -75,6 +77,7 @@ const BookingForm = ({ prevLocation }) => {
       if (response.status === 200) {
         toast.success(response.data.message);
         e.target.reset();
+        navigate('/thank-you');
       }
     } catch (error) {
       toast.error('Ooops! Something went wrong! Please, try again!');

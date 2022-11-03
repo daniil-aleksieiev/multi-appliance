@@ -86,7 +86,7 @@ const BookingForm = ({ prevLocation }) => {
     <div className="booking-form-wrapper">
       <h2 className="section-title">Schedule a Service</h2>
       <form onSubmit={sendEmail}>
-        <select name="type_of_service" required value={defaultServices} onChange={handleChange}>
+        <select name="type_of_service" required value={bookingFrom.type_of_service} onChange={handleChange}>
           <option hidden>Type of service *</option>
           <option value="Refrigerator Repair">Refrigerator Repair Diagnosis</option>
           <option value="Freezer Repair">Freezer Repair Diagnosis</option>

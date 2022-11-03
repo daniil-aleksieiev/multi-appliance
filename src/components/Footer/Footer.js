@@ -47,7 +47,7 @@ const Underline = () => {
       <div className="container">
         <div>
           <span>
-            ©{currentYear} Multi Appliance. Home and Commercial Cervices.
+            ©{currentYear} Fix Crew Appliance. Home and Commercial Cervices.
             <br className="mobile-br" /> All Rights Reserved.
           </span>
 

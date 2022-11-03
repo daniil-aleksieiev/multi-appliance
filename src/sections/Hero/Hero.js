@@ -11,7 +11,7 @@ const Hero = ({ title, phone, awards }) => (
           <br />
           {title} Services
           <br />
-          in San Diego
+          <span>in Coachella Valley</span>
         </h1>
 
         <div className="hero__awards">
